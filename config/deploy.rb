@@ -6,7 +6,7 @@ set :keep_releases, 3
 
 set :scm, :git
 
-set :repository, 'git://github.com/arferreira/cupom.git'
+set :repository, 'https://github.com/arferreira/cupom.git'
 
 set :branch, 'master'
 
