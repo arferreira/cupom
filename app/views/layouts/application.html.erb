@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Traz Cupom | Campo Grande</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "jquery" %>
+  <%= javascript_include_tag "jquery_cycle" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/pt_BR/all.js#xfbml=1&appId=431418383608795";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div class="content">
+
+	<header>
+		<div class="logo">
+		
+		</div>
+		<div id="menu_cidade">
+			<p>Cidade: <a href="#">Campo Grande</a></p>
+		</div>
+		<div id="login_header">
+
+
+			<% if user_signed_in? %>
+			<ul style="margin-left:-30px;">
+				<li><a href="/meuscupons">Meus Cupons</a></li>
+				<li><a href="/meuperfil">Meu Perfil</a></li>
+				<li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %> </li>
+			</ul>
+			<% else %>
+
+			<ul>
+				
+				<li><%= link_to('Cadastre-se', new_user_registration_path)%></li>
+				<li><%= link_to('Login', new_user_session_path)  %></li>
+
+			</ul>
+
+			<% end %>
+		</div>
+		<div id="busca_cupom">
+
+			<div id="input_busca">
+				<form action="" id="form_busca" name="form_busca">
+					<input type="text" name="palavra_busca" id="input_busca_voucher" placeholder="Buscar cupom. ex: Pizza, Lazer, Saúde ..." />
+					<input type="submit" name="buscar_palavra" id="buscar_palavra" value="Buscar"/>
+				</form>
+			</div>
+
+		</div>
+
+		<div class="menu_principal">
+
+			<div id="menu_box">
+				    <nav id="menu">
+					    <ul>
+					    <li><a href="/portal">Últimos cupons</a></li>
+					    <li><a href="#">Maiores Descontos</a></li>
+					    <li><a href="#">Top</a></li>
+					    <li><a href="#">Acabando</a></li>
+					    <li><a href="#">Mais baixados</a></li>
+					    </ul>
+					</nav>
+			</div>
+
+
+		</div>
+
+
+
+	</header>
+
+<div id="wrap">
+
+<%= yield %>
+</div>
+<footer>
+<!--Rodapé-->
+
+<div id="rodape_direita">
+<span>TrazCupom</span>
+<ul>
+<li><a href="/comofunciona">Como funciona</a></li>
+<li><a href="/duvidas">Perguntas frequentes</a></li>
+<li><a href="/termos">Termos de uso</a></li>
+<li><a href="/anunciantes">Anunciantes</a></li>
+<li><a href="#">Fale-conosco</a></li>
+
+</ul>
+</div>
+<div id="rodape_centro">
+<span>Parceiro</span>
+<ul>
+<li><a href="/parceiro">Seja parceiro</a></li>
+<li><a href="/indique">Indique um parceiro</a></li>
+
+
+</ul>
+</div>
+<div id="rodape_esquerda">
+    <span style="font-weight:bold;">Depoimentos</span>
+    <div id="depoimento"> 
+
+    	
+    	<span id="teste" style="font-size:12px;">- Adorei anunciar minha empresa no TrazCupom, aumentei meu faturamento em 10 vezes.</span>
+    	<br><br>
+    	<span id="teste" style="font-size:12px;">- O melhor site de cupons que ja utilizei.</span>
+    	
+    </div>
+
+
+	<div style="margin-top:20px; margin-left:50px;">
+	<div id="fb">
+     <a href=""><img src="/images/fb.png"></a> 
+	</div>
+	<div id="tt">
+      <a href=""><img src="/images/tt.png"></a>
+	</div>
+	<div id="gp">
+      <a href=""><img src="/images/gp.png"></a>
+	</div>
+	<div id="yt">
+      <a href=""><img src="/images/yt.png"></a>
+	</div>
+ </div>
+</div>
+
+<p>© 2013 Todos os direitos reservados a TrazCupom. </p>
+
+</footer>
+
+</div>
+</body>
+</html>

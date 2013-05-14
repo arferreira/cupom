@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @empresa.name %>
+</p>
+
+<p>
+  <b>Endereco:</b>
+  <%= @empresa.endereco %>
+</p>
+
+<p>
+  <b>Contato:</b>
+  <%= @empresa.contato %>
+</p>
+
+<p>
+<b>Imagem</b>
+<%= image_tag @empresa.image.url(:thumb) %>
+</p>
+
+
+<%= link_to 'Edit', edit_empresa_path(@empresa) %> |
+<%= link_to 'Back', empresas_path %>

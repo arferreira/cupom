@@ -1,0 +1,55 @@
+<div class="box_home">
+	<% 
+		# instanciando o objeto cupom para mostra-lo ao usuario
+		
+		@offer = Offer.find(@id_offer)
+
+	 %>
+
+     <h1 style="color:#45a4dc; font-size:20px;"><%= @offer.title %></h1>
+     <br />
+     <div style="float:right; width:410px; height:210px; padding-left:10px; background:#F8F8F8;">
+
+     	<div style="">
+     		<center><h4 style="">Detalhes:</h4></center>
+     		<div style="width:64px; height:64px; position:absolute; bottom:190px; right:350px;">
+     			<img src="/images/clock.png">
+     		</div>
+     		<h3 style="">de: R$<%= @offer.price %></h3>
+     	
+     		<h1 style="color:#45a4dc; margin-top:-20px; font-weight:bold; font-size:48px;">por: R$<%= @offer.por %>,00</h1>
+     		<span style="font-weight:bold;">Início: <%= @offer.start_date.strftime("%b, %m %Y") %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Fim: <%= @offer.final_date.strftime("%b, %m %Y") %></span></span>
+
+     	</div>
+
+     </div>
+     
+     <%= image_tag @offer.avatar.url %>
+     <br /><br />
+     <div style="background:#F8F8F8; padding:10px;">
+     <h4 style="color:#45a4dc;">Descrição do cupom:</h4>
+     <p> <%= @offer.content%> </p>
+     </div>
+     <div style="background:#F8F8F8; padding:10px;">
+     <h4 style="color:#45a4dc;">Regras para utilizar este cupom:</h4>    
+     <p><%= @offer.rules %></p>
+     </div>
+     <div style="background:#F8F8F8; padding:10px;">
+     <h3 style="color:#45a4dc;">Empresa:</h3>
+     <div style="width:100%;">
+     <p><%= image_tag @offer.empresa.image.url %></p>
+     <p style="font-weight:bold;"><%= @offer.empresa.name %></p>
+     <p>Endereço: <%= @offer.empresa.endereco %></p>
+      <p>Contato: <%= @offer.empresa.contato %></p>
+     <p><iframe width="725" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com.br/maps?f=q&amp;source=s_q&amp;hl=pt&amp;geocode=&amp;q=Rua+Alencarliense+Alves,+Campo+Grande+-+Mato+Grosso+do+Sul&amp;aq=1&amp;oq=rua+alencar&amp;sll=-20.875572,-54.261694&amp;sspn=1.588489,2.90863&amp;ie=UTF8&amp;hq=&amp;hnear=R.+Alencarliense+Alves+-+Maria+Aparecida,+Campo+Grande+-+Mato+Grosso+do+Sul,+79044-350&amp;t=m&amp;z=14&amp;ll=-20.467526,-54.550856&amp;output=embed"></iframe><br /></p>
+     </div>
+     <hr><br />
+          <div class="fb-like" data-href="http://www.trazcupom.com.br/" data-send="true" data-layout="button_count" data-width="450" data-show-faces="true" data-font="verdana">
+     </div><br /><br /><br />
+     <%= link_to "Baixar Cupom", baixar_path(@offer.id), :style => "width:250px; text-decoration:none; color:white; background:#45a4dc; height:30px; padding:10px;" %>
+     <br>
+     <br>     
+  
+     </div>
+
+</div>

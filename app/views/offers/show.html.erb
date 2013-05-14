@@ -1,0 +1,80 @@
+<div class="box_home">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @offer.title %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @offer.content %>
+</p>
+
+<p>
+  <b>Rules:</b>
+  <%= @offer.rules %>
+</p>
+
+<p>
+  <b>Contact:</b>
+  <%= @offer.contact %>
+</p>
+<p>
+  <b>Empresa:</b>
+  <%= @offer.empresa %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @offer.address %>
+</p>
+
+<p>
+  <b>De:</b>
+  <%= @offer.price %>
+</p>
+<p>
+  <b>Por:</b>
+  <%= @offer.por %>
+</p>
+
+<p>
+  <b>Dicount:</b>
+  <%= @offer.dicount %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= @offer.category %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%= @offer.city %>
+</p>
+
+<p>
+  <b>Count:</b>
+  <%= @offer.count %>
+</p>
+
+<p>
+  <b>Start date:</b>
+  <%= @offer.start_date %>
+</p>
+
+<p>
+  <b>Final date:</b>
+  <%= @offer.final_date %>
+</p>
+
+<p>
+  <b>Imagem:</b>
+  <%= image_tag @offer.avatar.url(:medium) %>
+</p>
+
+<%= link_to 'Edit', edit_offer_path(@offer) %> |
+<%= link_to 'Back', offers_path %>
+
+</div>

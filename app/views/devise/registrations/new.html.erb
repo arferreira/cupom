@@ -1,0 +1,28 @@
+<div class="box_home">
+<div style="margin-left:50px;">
+<h1 style="color: #45a4dc;">Cadastre-se</h1>
+
+<div id="logar_fb" style="margin-left:300px; margin-top:10px; position:absolute;">
+	<%= link_to image_tag('/images/login_fb.png') , user_omniauth_authorize_path(:facebook) %>
+</div>
+
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div><%= f.label :email, :style => "color:#000;" 	%><br /><br />
+  <%= f.email_field :email, :style => "width:250px; height:30px; border:2px solid #45a4dc;", :autofocus => true %></div>
+  <br />
+  <div><%= f.label :senha, :style => "color:#000;" %><br /><br />
+  <%= f.password_field :password, :style => "width:250px; height:30px; border:2px solid #45a4dc;" %></div>
+  <br />
+  <div><%= f.label "Confirmação de senha", :style => "color:#000;" %><br /><br />
+  <%= f.password_field :password_confirmation, :style => "width:250px; height:30px; border:2px solid #45a4dc;" %></div>
+  <br />
+  <div><%= f.submit "Cadastrar", :style => "width:250px; height:30px; color: white; background:#45a4dc; border:0px;"  %></div><br><br />
+<% end %>
+
+
+
+<%= render "devise/shared/links" %>
+</div>
+</div>

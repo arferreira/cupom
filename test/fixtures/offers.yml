@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  content: MyText
+  rules: MyText
+  contact: MyString
+  address: MyString
+  price: MyString
+  dicount: MyString
+  category: 
+  city: 
+  count: 
+  start_date: 2013-05-09
+  final_date: 2013-05-09
+
+two:
+  title: MyString
+  content: MyText
+  rules: MyText
+  contact: MyString
+  address: MyString
+  price: MyString
+  dicount: MyString
+  category: 
+  city: 
+  count: 
+  start_date: 2013-05-09
+  final_date: 2013-05-09

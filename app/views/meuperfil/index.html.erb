@@ -1,0 +1,21 @@
+<div class="box_home">
+	<div style="margin-left:50px;">
+	<h1 style="color: #45a4dc;">Seus dados</h1>
+	<p>Aqui estão contidos os seus dados de perfil</p>
+	    <hr>
+    <div id="img_user">
+    	<img src="/images/user.png" width="100" height="100" />
+    </div>
+	<% @user.each do |u| %>
+	<h4>Nome: </h4>
+	<%= u.name %>
+	<h4>Email: </h4>
+	<%= u.email %>
+
+
+	<% end %>
+	</div>
+
+
+
+</div>

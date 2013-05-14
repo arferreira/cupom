@@ -1,0 +1,23 @@
+<div class="box_home">
+	<div style="margin-left:50px;">
+	<h1 style="color: #45a4dc;">Cupons baixados</h1>
+	<p>Todos os cupons usados por você estão aqui.</p>
+	<h1><%= @mensagem %></h1>
+
+	<br><br><br>
+	<ul>
+
+		<% @cupom.each do |c| %>
+
+		<li><%= c.token.to_s %></li>
+
+		<% end %>
+
+	</ul>
+	</div>
+
+
+
+
+
+</div>
