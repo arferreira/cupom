@@ -54,7 +54,7 @@ module Cupom
     config.active_record.whitelist_attributes = false
 
     # Enable the asset pipeline
-    config.assets.enabled = true
+    config.assets.enabled = false
 
 
 
