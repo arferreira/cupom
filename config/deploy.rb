@@ -1,5 +1,13 @@
 require 'bundler/capistrano'
 
+ 
+# Quando trabalhando com o rbenv deve se copiar o $PATH do linux
+# para execuções do bundle e binarios do ruby
+# <required>
+set :default_environment, {
+  'PATH' => "/opt/local/bin:/opt/local/sbin:/opt/local/ruby/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:"
+}
+
 set :application, '198.199.86.139'
 
 set :keep_releases, 3
@@ -45,7 +53,7 @@ before 'deploy:update_code' do
 end
 
 namespace :deploy do
-  task :start do
+  # task :start do
 #     %w(config/database.yml).each do |path|
 #       from  = "#{deploy_to}/#{path}"
 #       to    = "#{current}/#{path}"
@@ -66,7 +74,7 @@ namespace :deploy do
   #   start
   # end
 
-  ##### News methods ->
+  ## News methods ->
 
   #starta a aplicação com o unicorn
   desc "Start Application"

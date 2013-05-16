@@ -45,26 +45,8 @@ end
 
 
 group :production do
-    gem 'unicorn'
-    gem 'rails', '3.2.13'
-
-	# Bundle edge Rails instead:
-	# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
+	gem 'unicorn'	
 	gem 'mysql2', '~> 0.3.11'
-
-
-	gem 'paperclip'
-
-	gem 'will_paginate'
-
-	gem 'i18n'
-
-	gem 'devise'
-
-	gem "omniauth", "~> 1.1.1"
-
-	gem "omniauth-facebook", "~> 1.4.1"
 end
 
 
