@@ -1,4 +1,5 @@
-class AjaxWillPaginate < WillPaginate::LinkRenderer
+require "will_paginate"
+class AjaxWillPaginate < WillPaginate::ActionView::LinkRenderer
   def prepare(collection, options, template)
     @update = options[:update]
     super
