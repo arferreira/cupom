@@ -20,6 +20,8 @@ gem "omniauth", "~> 1.1.1"
 
 gem "omniauth-facebook", "~> 1.4.1"
 
+gem 'capistrano'
+
 # Gems used only for assets and not required
 # in production environments by default.
 
