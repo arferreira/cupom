@@ -1,16 +1,16 @@
 require 'bundler/capistrano'
 
-set :application, '198.199.110.29'
+set :application, '198.199.86.139'
 
 set :keep_releases, 3
 
 set :scm, :git
 
-set :repository, 'https://github.com/arferreira/cupom.git'
+set :repository, 'git://github.com/arferreira/cupom.git'
 
 set :branch, 'master'
 
-set :deploy_via, :copy
+set :deploy_via, :remote_cache
 
 set :user, "root"
 
