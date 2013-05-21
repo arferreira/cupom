@@ -21,6 +21,14 @@ class PortalController < ApplicationController
 		
 	end
 
+	def imprimir
+		
+		@id_offer = params[:id_cupom]
+
+		@offer = Offer.find(@id_offer)
+
+	end
+
 	def baixar
 
 		# pegando o id do cupom para baixar
@@ -70,9 +78,16 @@ class PortalController < ApplicationController
 
 
 	def maiores
+	
+		@offer_maiores = Offer.find(:all, :order => "dicount DESC", :limit => "10")
 
 	end
 
+	def busca
+		 @offers = Offer.search(params[:search]).paginate(:per_page => 5, :page => params[:page])
+	end
+
+	
 	def top
 			
     end

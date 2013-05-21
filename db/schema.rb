@@ -11,7 +11,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130514012553) do
+ActiveRecord::Schema.define(:version => 20130517061323) do
+
+  create_table "acabandos", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "categories", :force => true do |t|
     t.string   "name_category"
@@ -41,13 +46,18 @@ ActiveRecord::Schema.define(:version => 20130514012553) do
     t.datetime "image_updated_at"
   end
 
+  create_table "maiores", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "offers", :force => true do |t|
     t.string   "title"
     t.text     "content"
     t.text     "rules"
     t.string   "contact"
     t.string   "address"
-    t.string   "price"
+    t.decimal  "price",               :precision => 10, :scale => 0
     t.string   "dicount"
     t.integer  "category_id"
     t.integer  "city_id"
@@ -66,6 +76,13 @@ ActiveRecord::Schema.define(:version => 20130514012553) do
 
   add_index "offers", ["category_id"], :name => "index_offers_on_category_id"
   add_index "offers", ["city_id"], :name => "index_offers_on_city_id"
+
+  create_table "termo_usos", :force => true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "tickets", :force => true do |t|
     t.integer  "offer_id"

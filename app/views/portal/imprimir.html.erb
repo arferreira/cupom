@@ -1,0 +1,14 @@
+<div class="box_home">
+	<div id="#cupom">
+		<h2><%= @offer.title %></h2>
+		<% 
+
+			@ticket = Ticket.where(:user_id => current_user.id, :offer_id => @offer.id)
+			@ticket.each do |t|
+		 %>
+		 <p>Número do cupom: <%= t.token %></p>
+
+		 <% end %>
+	</div>
+<div align='right'><a href='javascript:window.print()'><img src='http://i361.photobucket.com/albums/oo57/ren3_02/Impressora.png'/></a></div>
+</div>

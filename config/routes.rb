@@ -1,6 +1,9 @@
 Cupom::Application.routes.draw do
   
 
+  resources :termo_usos
+
+
   resources :empresas
 
 
@@ -43,7 +46,7 @@ Cupom::Application.routes.draw do
 
   get "/ver_cupom/:id_cupom" => "portal#show", :as => :ver_cupom
   get "/ver_cupom/baixar/:id_cupom" => "portal#baixar", :as => :baixar
-
+  get "/imprimir_cupom/:id_cupom" => "portal#imprimir", :as => :imprimir_cupom
   
   devise_for :users, :controllers => { :registrations => 'registrations',
                                        :omniauth_callbacks => "users/omniauth_callbacks" }

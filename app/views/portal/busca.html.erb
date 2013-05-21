@@ -1,0 +1,49 @@
+<h1 style="color:#45a4dc;">Resultado de sua busca:</h1>
+
+<% if @offers.length == 0 %>
+
+<div class="box_home">
+
+	<h3 style="color:#000;"> Não encontramos resultados com o que procurou.</h3>
+
+</div>
+
+<% else %>
+	
+
+<% @offers.each do |o|%>
+<div class="cupom_box_home">
+
+<div id="img_oferta">
+	
+	<%= image_tag o.avatar.url(:medium) %>
+
+	<div id="badge_oferta">
+		<span style="position:absolute; top:10px; left:25px;"><%= o.dicount %>%</span>
+	</div>
+	<p style="margin-left:5px; font-weight:bold;"><%= o.empresa.to_s %></p>
+</div>
+<div id="titulo_oferta">
+
+<h1><%= o.title %></h1>
+<p style="color:#45a4dc;">De: R$ <%= o.price.to_s+",00" %></p><p style="color:#000000; font-weigth:bold; font-size:20px;"> <strong> &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; Por: R$ <%= o.por.to_s+",00" %></strong></p>
+<p style="margin-top:-35px; color:black;">Validade: <p style="margin-top:-35px; font-weight:bold; margin-left:5px;"><%= o.final_date.strftime("%b, %m %Y") %></p></p>
+<p style="margin-top:-10px; font-size:28px; font-weight:bold; color:#45a4dc;"><%= o.count %></p>
+<p style="margin-top:-5px; color:black; margin-left:10px;"> ja imprimiram este cupom</p>
+<div id="ver_oferta">
+	<%= link_to "Pegar cupom", ver_cupom_path(o.id) %>
+</div>
+</div>
+
+
+</div>
+<% end %>
+
+<div id="paginacao">
+
+<%= will_paginate @offers, :update => '#wrap' %>
+</div>
+
+
+
+<% end %>

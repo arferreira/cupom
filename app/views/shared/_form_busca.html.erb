@@ -1,0 +1,14 @@
+
+<div id="input_busca">
+
+
+<%= form_tag url_for(:controller => 'portal', :action => 'busca'), :method => 'post', :id => "products_search" do %>
+  <p>
+    <%= text_field_tag :search, params[:search], :id => "input_busca_voucher", :placeholder => "ex: Pizza, Lazer, Saúde ..." %>
+    <%= submit_tag "Buscar", :title => nil, :id => "buscar_palavra" %>
+  </p>
+<% end %>
+
+
+
+</div>

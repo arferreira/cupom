@@ -1,2 +1,6 @@
 <div class="box_home">
+	<% @termos.each do |t| %>
+	<h1 style="color:#45a4dc;"><%= t.title %></h1>
+	<p style="padding:20px;"><%= t.content %></p>
+	<% end %>
 </div>

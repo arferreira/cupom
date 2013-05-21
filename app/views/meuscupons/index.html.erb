@@ -1,19 +1,53 @@
 <div class="box_home">
 	<div style="margin-left:50px;">
 	<h1 style="color: #45a4dc;">Cupons baixados</h1>
-	<p>Todos os cupons usados por você estão aqui.</p>
+	<p>Todos os cupons baixados por você estão aqui.</p>
 	<h1><%= @mensagem %></h1>
 
-	<br><br><br>
-	<ul>
 
-		<% @cupom.each do |c| %>
+	<br>
+	<body>
+    <table class="full_table_list">
 
-		<li><%= c.token.to_s %></li>
+    	<% @cupom.each do |c| %>
+		<% @offer = Offer.find(c.offer_id) %>
 
-		<% end %>
+        <tr>
+            <td>
+          		 <%= image_tag(@offer.avatar.url(:thumb)) %> 
+            </td>
+            
+            <td>
+            	<span>Código de seu cupom:</span>
+            	<%= c.token.to_s %>
+            </td>
 
-	</ul>
+            <td>
+            	<span>Valor:</span>
+            	<%= @offer.price.to_s+",00" %>
+
+            </td>
+            <td>
+            	<span>Imprimir até: </span>
+            	<%= @offer.final_date.strftime("%b, %m %Y") %>
+
+            </td>
+
+            <td>
+
+            	<%= link_to "Imprimir cupom", imprimir_cupom_path(@offer.id) %>
+
+            </td>
+
+        </tr>
+
+       <% end %>
+    </table>
+</body>
+
+
+
+
 	</div>
 
 

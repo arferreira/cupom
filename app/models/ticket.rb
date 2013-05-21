@@ -1,3 +1,3 @@
 class Ticket < ActiveRecord::Base
-  # attr_accessible :title, :body
+  attr_accessible :offer_id, :user_id
 end

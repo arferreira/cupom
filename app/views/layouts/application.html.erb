@@ -9,8 +9,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
+
+<script>
+(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
   js = d.createElement(s); js.id = id;
@@ -21,7 +22,7 @@
 
 	<header>
 		<div class="logo">
-		
+		 <%= link_to image_tag("/images/logo.png"), root_path %>
 		</div>
 		<div id="menu_cidade">
 			<p>Cidade: <a href="#">Campo Grande</a></p>
@@ -48,12 +49,7 @@
 		</div>
 		<div id="busca_cupom">
 
-			<div id="input_busca">
-				<form action="" id="form_busca" name="form_busca">
-					<input type="text" name="palavra_busca" id="input_busca_voucher" placeholder="Buscar cupom. ex: Pizza, Lazer, Saúde ..." />
-					<input type="submit" name="buscar_palavra" id="buscar_palavra" value="Buscar"/>
-				</form>
-			</div>
+			<%= render 'shared/form_busca' %>
 
 		</div>
 
@@ -63,10 +59,10 @@
 				    <nav id="menu">
 					    <ul>
 					    <li><a href="/portal">Últimos cupons</a></li>
-					    <li><a href="#">Maiores Descontos</a></li>
-					    <li><a href="#">Top</a></li>
+					    <li><a href="/portal/maiores">Maiores Descontos</a></li>
 					    <li><a href="#">Acabando</a></li>
-					    <li><a href="#">Mais baixados</a></li>
+					    <li><a href="#">Delivery</a></li>
+					    <li><a href="#">Reservas</a></li>
 					    </ul>
 					</nav>
 			</div>
@@ -77,7 +73,7 @@
 
 
 	</header>
-
+<%= render 'shared/menu_categorias' %>
 <div id="wrap">
 
 <%= yield %>
@@ -101,23 +97,19 @@
 <ul>
 <li><a href="/parceiro">Seja parceiro</a></li>
 <li><a href="/indique">Indique um parceiro</a></li>
-
-
+<li><a href="/solicite">Solicite uma visita</a></li>
 </ul>
 </div>
 <div id="rodape_esquerda">
-    <span style="font-weight:bold;">Depoimentos</span>
+    <span style="font-weight:bold;">Curta você também</span>
     <div id="depoimento"> 
 
-    	
-    	<span id="teste" style="font-size:12px;">- Adorei anunciar minha empresa no TrazCupom, aumentei meu faturamento em 10 vezes.</span>
-    	<br><br>
-    	<span id="teste" style="font-size:12px;">- O melhor site de cupons que ja utilizei.</span>
+	<div class="fb-like-box" data-href="https://www.facebook.com/pages/Traz-Cupom/452678541492507?ref=hl" data-width="247" data-height="150" data-show-faces="true" data-colorscheme="dark" data-stream="true" data-show-border="true" data-header="false" style="background:black; color:#45a4dc; border:0px;"></div>
     	
     </div>
 
 
-	<div style="margin-top:20px; margin-left:50px;">
+	<div style="margin-top:20px; margin-left:0px;">
 	<div id="fb">
      <a href=""><img src="/images/fb.png"></a> 
 	</div>

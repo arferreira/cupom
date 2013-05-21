@@ -13,8 +13,8 @@
 <div id="titulo_oferta">
 
 <h1><%= o.title %></h1>
-<p style="color:#45a4dc;">De: R$ <%= o.price %></p><p style="color:#000000; font-weigth:bold; font-size:20px;"> <strong> &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; Por: R$ <%= o.por.to_s+",00" %></strong></p>
-<p style="margin-top:-35px; color:black;">Validade: <p style="margin-top:-35px; font-weight:bold; margin-left:5px;"><%= o.final_date.strftime("%b, %m %Y") %></p></p>
+<p style="color:#45a4dc;">De: R$ <%= o.price.to_s+",00" %></p><p style="color:#000000; font-weigth:bold; font-size:20px;"> <strong> &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; Por: R$ <%= o.por.to_s+",00" %></strong></p>
+<p style="margin-top:-35px; color:black;">Validade: <p style="margin-top:-35px; font-weight:bold; margin-left:5px;"><%= o.final_date %></p></p>
 <p style="margin-top:-10px; font-size:28px; font-weight:bold; color:#45a4dc;"><%= o.count %></p>
 <p style="margin-top:-5px; color:black; margin-left:10px;"> ja imprimiram este cupom</p>
 <div id="ver_oferta">

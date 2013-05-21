@@ -10,15 +10,17 @@ header{
 	background: #45a4dc;
 }
 .menu_principal{width: 100%; height: 50px; background: black; margin-top: 200px; float: left;}
-.logo
+
+.logo a
 {
-	width: 250px;
+	width: 350px;
 	height: 171px;
-	background: url('/images/logo.png');
 	position: absolute;
 	float: left;
-	margin-left: 300px;
+	margin-left: 240px;
+	top: 20px;
 }
+.logo a img{}
 #menu_box
 {
 	width: 70%;
@@ -60,10 +62,10 @@ header{
 #login_header ul li{display: inline; margin-left: 10px;}
 #login_header ul li a{color: black; text-decoration: none; padding: 0px 0px;}
 #login_header ul li a:hover{color: white;}
-#busca_cupom{width: 530px; height: 65px; background: black; margin-left: 580px; margin-top: 80px; position: absolute;}
-#input_busca{width: 100%; height: 40px; margin-top: 8px; margin-left: 8px}
+#busca_cupom{width: 530px; height: 70px; background: black; margin-left: 580px; margin-top: 80px; position: absolute;}
+#input_busca{width: 100%; height: 40px; margin-top: 0px; margin-left: 8px}
 #input_busca_voucher{width: 80%; height: 40px;  border: 2px solid #45a4dc; color: #CCC; font-weight: bold; font-size: 18px; }
-#buscar_palavra{width: 80px; height: 40px; background: #45a4dc; color: white; font-weight: bold; border: 0px;}
+#buscar_palavra{width: 80px; height: 46px; background: #45a4dc; color: white; font-weight: bold; border: 0px;}
 
 #wrap {
 
@@ -151,11 +153,31 @@ footer p{font-size: 12px; color: black; position: absolute; bottom: 0; left: 40%
 
 #depoimento
 {
-	width: 100%;
-	height: 105px;
+	width: 247px;
+	height: 150px;
 	margin-top: 5px;
-	background: url('/images/bg_depoimento.png') no-repeat;
-	padding: 35px 10px 15px 10px;
-}
-#depoimento span{color: #45a4dc; }
+	}
+
 #img_user{width: 100px; height: 100px; border: 1px solid black;}
+.zebra_cupom{list-style: none; padding: 0px;}
+.zebra_cupom li
+{
+	height: 90px;
+	background: #F8F8F8;
+	padding: 10px;
+	margin: 15px;
+}
+.full_table_list{width:100%; }
+ /*colocando bordas nas linhas*/
+.full_table_list tr{border:1px black solid;}
+
+.full_table_list td{padding: 20px;}
+
+.full_table_list td a{text-decoration: none; color: #45a4dc; font-weight: bold;}
+.full_table_list td span{font-weight: bold;}
+         
+        /*Definido cor das linhas pares*/
+.full_table_list tr:nth-child(even) {background: #F8F8F8}
+         
+        /*Definindo cor das Linhas impáres*/
+.full_table_list tr:nth-child(odd) {background: #EEE}    
