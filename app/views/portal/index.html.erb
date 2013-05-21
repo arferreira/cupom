@@ -27,6 +27,6 @@
 <% end %>
 
 <div id="paginacao">
-
-<%= will_paginate @offer, :update => '#wrap' %>
+<% page_entries_info @offer %>
+<%= will_paginate @offer, :update => '#wrap', :next_label => 'Próxima', :previous_label => 'Anterior' %>
 </div>

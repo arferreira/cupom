@@ -7,4 +7,8 @@ def sortable(column, title = nil)
   link_to title, params.merge(:sort => column, :direction => direction, :page => nil), {:class => css_class}
 end
 
+def javascript(*args)
+  content_for(:head) { javascript_include_tag(*args) }
+end
+
 end

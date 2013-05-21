@@ -17,7 +17,7 @@ header{
 	height: 171px;
 	position: absolute;
 	float: left;
-	margin-left: 240px;
+	margin-left: 15%;
 	top: 20px;
 }
 .logo a img{}
@@ -36,7 +36,7 @@ header{
 
 #menu ul li { display: inline; }
 #menu ul li a {
-    padding: 2px 40px;
+    padding: 2px 20px;
     font-size: 18px;
     font-weight: normal;
     display: inline-block;

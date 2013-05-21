@@ -2,7 +2,7 @@
 class PortalController < ApplicationController
 	def index
 		 
-		 @offer = Offer.paginate(:page => params[:page], :per_page => 4)
+		 @offer = Offer.paginate(:page => params[:page], :per_page => 2)
 
 	end
 
@@ -31,19 +31,15 @@ class PortalController < ApplicationController
 
 	def baixar
 
+		
+
+		if user_signed_in?
 		# pegando o id do cupom para baixar
 		@id_baixar =  params[:id_cupom]
 		# id do usuario logado
 		@user = current_user.id
-
 		@baixou =  baixouoferta(@user,@id_baixar)
-
 		if @baixou.length == 0
-
-		if user_signed_in?
-
-		
-
 		# algoritmo gerando um token pra cada cupom
 		@token = rand.to_s
 
@@ -60,18 +56,18 @@ class PortalController < ApplicationController
 		@protocolo = "O número de protocolo gerado foi: #{@token}"
 
 	    else
-
-	    	 redirect_to :controller=>'users', :action => 'sign_up' 
+	    # mando o usuario pra index,  ele ja baixou o cupom.
+		redirect_to :controller=>'portal', :action => 'index'	    	
 			
 		end
 
 		else
 
-
-			 redirect_to :controller=>'portal', :action => 'index'
-
+		redirect_to :controller=>'users', :action => 'sign_up' 
 			
 		end
+
+		
 
 		
 	end # fim action baixar
