@@ -56,6 +56,8 @@ module Cupom
     # Enable the asset pipeline
     config.assets.enabled = false
 
+    
+
     config.generators do |g|
     g.assets false
     end
