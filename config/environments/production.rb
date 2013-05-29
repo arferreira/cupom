@@ -8,8 +8,9 @@ Cupom::Application.configure do
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
 
-  # Enable the asset pipeline
-  config.assets.enabled = false
+
+  # Disable Rails's static asset server (Apache or nginx will already do this)
+  config.serve_static_assets = false
   # Defaults to nil and saved in location specified by config.assets.prefix
   # config.assets.manifest = YOUR_PATH
 
