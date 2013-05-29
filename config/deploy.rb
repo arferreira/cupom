@@ -1,12 +1,11 @@
 require 'bundler/capistrano'
 
  
-# Quando trabalhando com o rbenv deve se copiar o $PATH do linux
-# para execuções do bundle e binarios do ruby
-# <required>
 set :default_environment, {
-  'PATH' => "/opt/local/bin:/opt/local/sbin:/opt/local/ruby/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:"
+  :PATH => '/opt/local/bin:/opt/local/sbin:/opt/local/ruby/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin',
+  :GEM_HOME => '/opt/local/ruby/gems'
 }
+
 
 set :application, '198.199.86.139'
 
