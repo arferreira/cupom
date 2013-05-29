@@ -7,7 +7,7 @@ set :default_environment, {
 }
 
 
-set :application, '198.199.86.139'
+set :application, 'www.trazcupom.com'
 
 set :keep_releases, 3
 
@@ -87,7 +87,9 @@ namespace :deploy do
   desc "Stop Application"
   task :stop, :roles => :app, :except => { :no_release => true } do 
     # mata o serviço do unicorn passando o pid definido na linha 99
-    run "#{try_sudo} kill `cat #{unicorn_pid}`"
+   # run "#{try_sudo} kill `cat #{unicorn_pid}`"
+    run "if [ -e /var/www/cupom/shared/pids/unicorn.pid ]; then kill `cat /var/www/cupom/shared/pids/unicorn.pid`; fi;"
+
   end
   
   # mata o serviço do unicorn apos axecuções atual
