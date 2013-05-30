@@ -31,24 +31,21 @@ gem 'capistrano'
 group :assets do
   gem 'sass-rails'
   gem 'compass-rails'
-
+  gem 'coffee-rails'
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   gem 'therubyracer', :platforms => :ruby
-
   gem 'uglifier'
 end
 
 
 group :development do
   gem 'capistrano'
-  gem 'cofee-rails'
 end
 
 
 group :production do
 	gem 'unicorn'	
 	gem 'mysql2', '~> 0.3.11'
-	gem 'cofee-rails'
 end
 
 
