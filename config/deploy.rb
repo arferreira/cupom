@@ -52,28 +52,7 @@ before 'deploy:update_code' do
 end
 
 namespace :deploy do
-  # task :start do
-#     %w(config/database.yml).each do |path|
-#       from  = "#{deploy_to}/#{path}"
-#       to    = "#{current}/#{path}"
-# # 
-#       run "if [ -f '#{to}' ]; then rm '#{to}'; fi; ln -s #{from} #{to}"
-#     end
-  #   run "cd #{current} && RAILS_ENV=production && GEM_HOME=/opt/local/ruby/gems && bundle exec unicorn_rails -c #{deploy_to}/config/unicorn.rb -D"
 
-  # end
-
-  # task :stop do
-    
-  #   run "if [ -e /var/www/cupom/shared/pids/unicorn.pid ]; then kill `cat /var/www/cupom/shared/pids/unicorn.pid`; fi;"
-  # end
-
-  # task :restart do
-  #   stop
-  #   start
-  # end
-
-  ## News methods ->
 
   #starta a aplicação com o unicorn
   desc "Start Application"
@@ -87,8 +66,8 @@ namespace :deploy do
   desc "Stop Application"
   task :stop, :roles => :app, :except => { :no_release => true } do 
     # mata o serviço do unicorn passando o pid definido na linha 99
-   # run "#{try_sudo} kill `cat #{unicorn_pid}`"
-    run "if [ -e /var/www/cupom/shared/pids/unicorn.pid ]; then kill `cat /var/www/cupom/shared/pids/unicorn.pid`; fi;"
+    run "#{try_sudo} kill `cat #{unicorn_pid}`"
+   # run "if [ -e /var/www/cupom/shared/pids/unicorn.pid ]; then kill `cat /var/www/cupom/shared/pids/unicorn.pid`; fi;"
 
   end
   
