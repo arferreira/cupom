@@ -41,12 +41,14 @@ end
 
 group :development do
   gem 'capistrano'
+  gem 'cofee-rails'
 end
 
 
 group :production do
 	gem 'unicorn'	
 	gem 'mysql2', '~> 0.3.11'
+	gem 'cofee-rails'
 end
 
 
